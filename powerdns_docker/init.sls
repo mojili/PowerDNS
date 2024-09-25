@@ -3,12 +3,12 @@
 {% set container_name = "pdns" %}
 {% set tag_name = pillar['tag_name'] %}
 {% set config = pillar.get('nodes_info', {}) %}
-{% set registry_url = 'harbor.digicdn.dev:20443' %}
+{% set registry_url = 'harbor.......:20443' %}
 {% set repo = 'powerdns-docker' %}
 {% set reg_harbor = pillar.get('reg_harbor', {}) %}
 {% if grains['nodename'] == 'stage06' or grains['nodename'] == 'stage07' %}
-  {% set NAME_SERVER_1 = '172.30.70.12' %}
-  {% set NAME_SERVER_2 = '172.30.70.14' %}
+  {% set NAME_SERVER_1 = 'a.b.c.d' %}
+  {% set NAME_SERVER_2 = 'a.b.c.f' %}
 {% elif grains.id in salt['pillar.get']('master:nodegroups:popsite', []) %}
   {% set NAME_SERVER_1 = '8.8.8.8' %}
   {% set NAME_SERVER_2 = '1.1.1.1' %}
